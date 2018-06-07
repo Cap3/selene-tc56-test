@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><!--This is an auto generated document. Changes to this document may cause incorrect behavior.-->™
+<wap-provisioningdoc>
+    <characteristic type="Profile">
+        <parm name="ProfileName" value="EmergencyButton"/>
+        <parm name="ModifiedDate" value="2018-05-14 16:59:28"/>
+        <parm name="TargetSystemVersion" value="7.2"/>
+        <characteristic type="KeyMappingMgr" version="4.4">
+            <parm name="emdk_name" value="emergency SCAN"/>
+            <parm name="Action" value="1"/>
+            <characteristic type="KeyMapping">
+                <parm name="KeyIdentifier" value="SCAN"/>
+                <characteristic type="BaseTable">
+                    <parm name="BaseBehavior" value="3"/>
+                    <parm name="BaseSendIntent" value="3"/>
+                    <parm name="BaseIntentType" value="2"/>
+                    <parm name="BaseIntentAction"
+                          value="de.cap3.selenetc56test.intent.action.EMERGENCY"/>
+                    <parm name="BaseIntentCategory" value="de.cap3.selenetc56test"/>
+                    <parm name="BaseIntentAddKeyState" value="1"/>
+                    <parm name="BaseIntentIncludeFlags" value="18000000"/>
+                </characteristic>
+            </characteristic>
+        </characteristic>
+    </characteristic>
+</wap-provisioningdoc>
