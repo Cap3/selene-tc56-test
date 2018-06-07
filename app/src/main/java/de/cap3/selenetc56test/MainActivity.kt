@@ -12,14 +12,14 @@ import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    val seleneService = EmdkConfigurator()
+    val seleneService = EmdkConfigurator(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        buttonStart.setOnClickListener({ _ -> seleneService.startEmdkConfiguration(this) })
+        buttonStart.setOnClickListener({ _ -> seleneService.startEmdkConfiguration() })
 
         delayedIntent.setOnClickListener({_ -> sendDelayedEmergencyIntent()})
     }

@@ -1,15 +1,16 @@
 package de.cap3.selenetc56test
 
-import android.content.Context
+import android.support.design.widget.Snackbar
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 
 import com.symbol.emdk.EMDKManager
 import com.symbol.emdk.EMDKResults
 import com.symbol.emdk.ProfileManager
 
-class EmdkConfigurator : EMDKManager.EMDKListener {
+class EmdkConfigurator(val context: AppCompatActivity) : EMDKManager.EMDKListener {
 
-    fun startEmdkConfiguration(context: Context) {
+    fun startEmdkConfiguration() {
         EMDKManager.getEMDKManager(context, this)
     }
 
@@ -63,7 +64,7 @@ class EmdkConfigurator : EMDKManager.EMDKListener {
 
         // use values() to iterate over enum, because code and runtime values are not same
         EMDKManager.FEATURE_TYPE.values()
-                //.filter { feature -> feature.name == "PROFILE" }
+                .filter { feature -> feature.name == "PROFILE" }
                 .forEach { feature ->
                     Log.d(TAG, "EMDK feature enum name: ${feature.name}")
 
@@ -78,6 +79,7 @@ class EmdkConfigurator : EMDKManager.EMDKListener {
                             setEmdkProfile(emdkBase, releaseManager)
                         } else {
                             if (emdkBase == null) {
+                                Snackbar.make(context.findViewById(R.id.baseLayout), "ProfileManager is null", Snackbar.LENGTH_LONG)
                                 Log.e(TAG, "emdkBase is null feature ${feature.name} not working")
                             }
                             releaseManager()
