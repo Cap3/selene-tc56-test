@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Selene TC56 test</string>
     <string name="action_settings">Settings</string>
+    <string name="app_description">
+        This App will trigger a 1 second vibration each time an emergency action intent is received.
+        The first button will configure the SCAN button to broadcast such an intent.\n
+        The desired behavior is, that the button will broadcast the intent independent of the device\'s screen- and lock-state.\n
+        The second button will trigger an emergency intent broadcast after 10 seconds, to test if the intent broadcast receiver is
+        working correctly even when the screen is shut down.
+    </string>
 </resources>
